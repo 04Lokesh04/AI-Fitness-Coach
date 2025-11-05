@@ -12,9 +12,9 @@ Deployed via **Render + Vercel**
 
 ---
 
-## 🚀 Features
+##  Features
 
-✅ Personalized plan based on:
+# Personalized plan based on:
 - Age, height, weight, gender
 - Goal (weight loss, muscle gain, endurance)
 - Diet preference
@@ -23,7 +23,7 @@ Deployed via **Render + Vercel**
 - Stress level
 - Medical conditions
 
-✅ AI-Generated:
+# AI-Generated:
 - 7-Day Workout Plan
 - 7-Day Diet Plan
 - Motivation Tips
@@ -31,28 +31,28 @@ Deployed via **Render + Vercel**
 - Text-to-Speech audio (ElevenLabs)
 - Export to PDF
 
-✅ App Extras
+# App Extras
 - Save & reload plans
 - Light / Dark mode
 - Responsive UI
 
 ---
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
-### ✅ Frontend
+###  Frontend
 - React (Vite)
 - Tailwind CSS
 - React Router
 - Context API
 
-### ✅ Backend
+###  Backend
 - Node.js
 - Express.js
 - CORS
 - dotenv
 
-### ✅ AI Services
+### AI Services
 | Feature | API |
 |--------|-----|
 | Workout / Diet / Quotes | Google Gemini |
@@ -61,7 +61,7 @@ Deployed via **Render + Vercel**
 
 ---
 
-## 📁 Folder Structure
+##  Folder Structure
 
 AI-fitness-coach/
 ├─ ai-fitness-coach/      # React Frontend
