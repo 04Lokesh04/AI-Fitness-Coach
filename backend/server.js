@@ -5,7 +5,25 @@ dotenv.config()
 const app=express()
 
 
-app.use(cors())
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://ai-fitness-coach-roan.vercel.app",
+//     ],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
+
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  })
+);
+
+
 app.use(express.json())
 
 import plan from './routes/plans.js'
