@@ -3,11 +3,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const router = express.Router();
 
-/**
- * POST /api/generateQuote
- * body: { goal?: string, level?: string }
- * returns: { text: string, author: string }
- */
 router.post("/", async (req, res) => {
         console.log('quote api hit')
 
@@ -35,7 +30,6 @@ Constraints:
     const out = await model.generateContent(prompt);
     const raw = out.response.text();
 
-    // robust JSON extraction (in case model adds extra text)
     const match = raw.match(/\{[\s\S]*\}/);
     const json = match ? JSON.parse(match[0]) : JSON.parse(raw);
 

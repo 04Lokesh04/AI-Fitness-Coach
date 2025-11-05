@@ -23,7 +23,6 @@ export default function Plans() {
   const nav = useNavigate();
   const loc = useLocation();
 
-  // load saved plans if requested
   useEffect(() => {
     const params = new URLSearchParams(loc.search);
     if (params.get("load") === "saved") {
@@ -32,7 +31,6 @@ export default function Plans() {
     }
   }, [loc.search, setPlans]);
 
-  // generate plans if not present
   useEffect(() => {
     if (!plans) {
       if (!profile) {

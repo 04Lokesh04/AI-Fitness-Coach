@@ -28,11 +28,9 @@ router.post("/", async (req, res) => {
     const audio = await client.textToSpeech.convert(voiceId, {
       text,
       modelId: "eleven_multilingual_v2",
-      // You can change output format if needed
       outputFormat: "mp3_44100_128",
     });
 
-    // Audio is returned as WebStream
     const arrayBuffer = await audio.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 

@@ -9,7 +9,6 @@ export default function QuoteCard() {
   useEffect(() => {
     (async () => {
       try {
-        // Personalize a bit if we have context from profile
         const goal = profile?.goal || "";
         const level = profile?.level || "";
         const q = await getDailyQuoteAI({ goal, level });

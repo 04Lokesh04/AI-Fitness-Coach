@@ -13,23 +13,20 @@
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import "../pdf.css"; // ✅ import override
+import "../pdf.css"; 
 
 export async function downloadPDF(id="plans-root") {
   const el = document.getElementById(id);
   if (!el) return alert("PDF container not found!");
 
-  // ✅ Add safe-class before capture
   el.classList.add("export-pdf");
 
-  // ✅ Render
   const canvas = await html2canvas(el, {
     scale: 2,
     useCORS: true,
     backgroundColor: "#ffffff"
   });
 
-  // ✅ Remove class after capture
   el.classList.remove("export-pdf");
 
   const imgData = canvas.toDataURL("image/png");

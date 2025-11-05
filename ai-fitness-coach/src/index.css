@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Light default */
 :root {
   --app-bg: #ffffff;
   --app-surface: #f9fafb;
@@ -9,7 +8,6 @@
   --app-border: #e5e7eb;
 }
 
-/* Dark overrides */
 .dark {
   --app-bg: #0c0c0c;
   --app-surface: #1a1a1a;
@@ -51,7 +49,6 @@
   background-color: var(--app-surface) !important;
 }
 
-/* global select fix */
 select {
   background-color: var(--app-surface);
   color: var(--app-text);

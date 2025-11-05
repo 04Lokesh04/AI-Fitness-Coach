@@ -17,14 +17,11 @@
 // }
 
 
-// ✅ Browser TTS — NO backend required
-
 let voices = [];
 
 function loadVoices() {
   voices = speechSynthesis.getVoices();
   if (!voices.length) {
-    // Voices may not be loaded yet — wait for event
     speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices();
     };
@@ -36,13 +33,12 @@ export function playAudio(text, options = {}) {
   if (!text) return;
 
   const {
-    rate = 1.0,     // 0.5 (slow) → 2.0 (fast)
-    pitch = 1.0,    // 0 (low) → 2 (high)
-    lang = "en-US", // language
-    preferredVoice = "Google UK English Male", // fallback voice name
+    rate = 1.0,     
+    pitch = 1.0,    
+    lang = "en-US", 
+    preferredVoice = "Google UK English Male", 
   } = options;
 
-  // Stop existing speech
   speechSynthesis.cancel();
 
   const utter = new SpeechSynthesisUtterance(text);
@@ -50,12 +46,10 @@ export function playAudio(text, options = {}) {
   utter.pitch = pitch;
   utter.lang = lang;
 
-  // 🎤 Try selecting a good voice
   const match = voices.find(v => v.name.includes(preferredVoice));
   if (match) {
     utter.voice = match;
   } else if (voices.length > 0) {
-    // fallback — first English voice
     utter.voice =
       voices.find(v => v.lang.startsWith("en")) || voices[0];
   }
